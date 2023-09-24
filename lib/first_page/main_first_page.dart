@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) => const MaterialApp(home: MyHomePage(title: 'Flutter 首页'));
+  Widget build(BuildContext context) => const MaterialApp(home: MyHomePage(title: 'main_first_page'));
 }
 
 class MyHomePage extends StatefulWidget {

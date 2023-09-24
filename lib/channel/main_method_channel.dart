@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const MyHomePage(title: '演示 MethodChannel'),
+      home: const MyHomePage(title: 'main_method_channel'),
     );
   }
 }
