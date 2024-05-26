@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'android_view.dart';
 
 void main() => runApp(const MyApp());
 
@@ -28,10 +29,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   static const platform = MethodChannel('com.bqt.test/base_channel');
   String _batteryLevel = '';
-  int _counter = 0;
+  int _clickCount = 0;
 
   void _incrementCounter() {
-    setState(() => _counter++); // This call to setState causes rerun the build method below
+    setState(() => _clickCount++); // This call to setState causes rerun the build method below
     _getBatteryLevel().then((value) {
       debugPrint(value);
       setState(() => _batteryLevel = value);
@@ -57,7 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('电量 $_batteryLevel'),
-              Text('点击次数 $_counter'),
+              Text('点击次数 $_clickCount'),
+              SizedBox(width: 200, height: 200, child: SampleView(clickCount: _clickCount))
             ],
           ),
         ),
